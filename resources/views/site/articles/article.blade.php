@@ -30,7 +30,7 @@
  @endif 
   @endfor
 <p>{{ $article->description}}</p>
-  <a href="#" class="btn-danger padbtn">Read More</a>
+  <a href="{{ URL::to('/articles/'.$article->slug)}}" class="btn-danger padbtn">Read More</a>
   </div>
   </div>
   @endforeach

@@ -31,6 +31,10 @@ class Article extends Model
    	return Article::create($data);
    }
 
+   public function getDataBySlug($slug){ 
+    return Article::where('status', 'active')->where('slug', $slug)->first();
+   }
+
    public function getCategoryTitleById($categoryId) 
    {
       $category = DB::table('articles_category')->where('id', $categoryId)->first();

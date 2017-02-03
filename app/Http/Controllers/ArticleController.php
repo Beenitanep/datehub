@@ -21,10 +21,17 @@ class ArticleController extends Controller
    	return view ('site/articles/article',$data);
    }
 
- //   public function article(){
-	// 	$data['articleList'] = $this->article->getAllData();
-	// 	return view ('site/articles/article',$data);
-	// }
+   public function detail($slug){
+   	$articleDetails = $this->article->getDataBySlug($slug);
+  if(!$articleDetails){
+    		abort(404);
+    	}
+   $data['articleDetails'] = $articleDetails;
+   return view('site/articles/articles-details', $data);
+
+   }
+
+
 
 
 

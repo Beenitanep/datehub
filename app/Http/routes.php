@@ -57,6 +57,7 @@ Route::get('/find-a-date', 'FindDateController@index');
 
 Route::get('/articles', 'ArticleController@index');
 
+Route::get('/articles/{slug}', 'ArticleController@detail');
 // Route:: get('/home', 'HomeController@home');
 
 
