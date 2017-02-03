@@ -44,4 +44,9 @@ class User extends Authenticatable
         $user = User::find($id);
         return $user->delete();
     }
+
+    public function searchUser($search)
+    {
+        return User::where('name', 'LIKE', '%'.$search. '%')->get();
+    }
 }
