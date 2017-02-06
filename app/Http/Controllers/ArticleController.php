@@ -23,7 +23,7 @@ class ArticleController extends Controller
 
    public function detail($slug){
    	$articleDetails = $this->article->getDataBySlug($slug);
-  if(!$articleDetails){
+  if(empty($articleDetails)){
     		abort(404);
     	}
    $data['articleDetails'] = $articleDetails;

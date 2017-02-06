@@ -1,4 +1,11 @@
 @extends('layout')
+
+@section('title', 'Online Date Find Date Page')
+@section('description', 'Share text and photos with your friends and have fun')
+@section('keywords', 'sharing, sharing text, text, sharing photo, photo,')
+@section('robots', 'index, follow')
+@section('revisit-after', 'content="3 days')
+
 @section('content')
 <div class="profile-list">
 <div class="container">

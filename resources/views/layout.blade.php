@@ -2,7 +2,9 @@
 <html lang="en">
     <head>
     <meta charset="UTF-8">
-        <title>Online Date</title>
+        <title>Project Name - @yield('title')</title>
+        <meta name="description" content="@yield('description')">
+        <meta name="keywords" content="@yield('keywords')">
        <link rel="stylesheet" href="/css/style.css">
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

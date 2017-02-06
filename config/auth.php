@@ -40,6 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        //define own guard
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
 
         'api' => [
             'driver' => 'token',
@@ -69,6 +75,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        'admins' => [
+        'driver' => 'eloquent.admin',
+        'model' => App\Admin::class,
+    ],
 
         // 'users' => [
         //     'driver' => 'database',

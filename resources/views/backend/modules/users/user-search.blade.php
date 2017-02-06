@@ -1,4 +1,5 @@
-l;lkk
+
 @foreach($search as $data)
-{{ $data->title}}
+<p>Name:{{ $data->name }}</p>
+<p>Email:{{ $data->email }}</p>
 @endforeach

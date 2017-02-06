@@ -30,7 +30,12 @@ class User extends Authenticatable
 
     public function getAllUser()
     {
-        return User::all();
+        return User::paginate(15);
+    }
+
+    Public function addData($data)
+    {
+        return User::create($data);
     }
 
     public function editDate($data, $id)
@@ -47,6 +52,6 @@ class User extends Authenticatable
 
     public function searchUser($search)
     {
-        return User::where('name', 'LIKE', '%'.$search. '%')->get();
+         return User::where('name', 'LIKE', '%'.$search.'%')->get();
     }
 }
