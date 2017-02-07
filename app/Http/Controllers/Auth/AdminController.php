@@ -26,6 +26,7 @@ class AdminController extends Controller
   	public function postLogin(){
   		$username = Input::get('username');
         $password = md5(Input::get('password'));
+         //$password = Hash::make(Input::get('password'));
         $loggedInAdmin = $this->admin->getLogin($username,$password);
         // dd($loggedInAdmin);
         if($loggedInAdmin){

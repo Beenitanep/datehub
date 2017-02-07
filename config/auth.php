@@ -41,10 +41,10 @@ return [
             'provider' => 'users',
         ],
         //define own guard
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins',
-        ],
+        // 'admin' => [
+        //     'driver' => 'session',
+        //     'provider' => 'admins',
+        // ],
 
 
         'api' => [
@@ -76,15 +76,15 @@ return [
             'model' => App\User::class,
         ],
 
-        'admins' => [
-        'driver' => 'eloquent.admin',
-        'model' => App\Admin::class,
-    ],
+    //     'admins' => [
+    //     'driver' => 'eloquent.admin',
+    //     'model' => App\Admin::class,
+    // ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'users' => [
+            'driver' => 'database',
+            'table' => 'users',
+        ],
     ],
 
     /*

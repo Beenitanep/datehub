@@ -4,15 +4,33 @@
 {!! Form::open(array('url' => PREFIX.'users/editPost','files' => 'true', 'enctype' => 'multipart/form-data' )) !!}
     	  {{ csrf_field() }}
     	  <input type="hidden" name="id" id="id" value="{{ $editData->id}}">
-        <h3>Edit {{ $editData->title }}</h3>
-    <div class="form-group">
-    <label for="exampleInputTitle">Title</label>
-    <input type="text" name="title" class="form-control" id="title" value="{{ $editData->name}}">
+        <h3>Edit {{ $editData->name }} Data</h3>
+        <div class="form-group">
+    <label for="exampleInputFirstName">First Name</label>
+    <input type="text" name="first-name" class="form-control" id="first-name" value="{{ $editData->first_name}}">
   </div>
   <div class="form-group">
-    <label for="exampleInputUrl">Email</label>
-    <input type="text" class="form-control" name="email" id="email" placeholder="email" value="{{ $editData->email }}">
+    <label for="exampleInputLastName">Last Name</label>
+    <input type="text" name="last-name" class="form-control" id="last-name" value="{{ $editData->last_name}}">
   </div>
+  <div class="form-group">
+    <label for="exampleInputUsername">Username</label>
+    <input type="text" name="username" class="form-control" id="username" value="{{ $editData->name}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail">Email</label>
+    <input type="email" class="form-control" name="email" id="email" value="{{ $editData->email}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword">Password</label>
+    <input type="password" class="form-control" name="password" id="password" placeholder="password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword">Confirm Password</label>
+    <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder="confirm password">
+  </div>
+
+    
   <!-- <div class="form-group">
  <label for="examplestatus">Status</label>
   <select class="form-control" name="status" id="status">

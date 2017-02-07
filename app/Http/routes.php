@@ -17,6 +17,12 @@ define('PREFIX','/cms/');
 Route::get(PREFIX, 'Auth\AdminController@getLogin');
 Route::post(PREFIX.'login', 'Auth\AdminController@postLogin');
 Route::get(PREFIX.'logout', 'Auth\AdminController@logout');
+
+Route::get(PREFIX.'adminpasswordchange', 'cms\modules\adminpasswordchangeController@index');
+Route::post(PREFIX.'postCredentials', 'cms\\modules\\adminpasswordchangeController@postCredentials');
+
+
+
 Route::get(PREFIX.'home', ['middleware'=>['admin','role'],'uses'=>'cms\\modules\\home\\homeController@index']);
 
 Route::group(['prefix' => PREFIX, 'middleware' => ['admin','role']],function(){
@@ -37,6 +43,7 @@ Route::group(['prefix' => PREFIX, 'middleware' => ['admin','role']],function(){
 
 
 });
+
 //prefix is used in url and namespace is used to define path in controller like:(App\Http\Controllers namespace)'
 
 // Route::get('/', function () {
@@ -45,7 +52,11 @@ Route::group(['prefix' => PREFIX, 'middleware' => ['admin','role']],function(){
 
 // Route:: get('/', 'HomeController@home');
 
+
+
 Route::auth();
+
+
 
 Route:: get('/', 'HomeController@home');
 
