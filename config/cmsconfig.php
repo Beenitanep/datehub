@@ -1,7 +1,7 @@
 <?php
 return [
     'cmsmodules' => [
-        'home'=>"Dashboard",'slider'=>"Slider",'articles'=>"Articles",'datetips'=>"Date Tips",'profile'=>"Profile",'users'=>"Users", 'menu' => "Menu"
+        'home'=>"Dashboard",'slider'=>"Slider",'articles'=>"Articles",'datetips'=>"Date Tips",'profile'=>"Profile",'users'=>"Users", 'menu' => "Menu" , 'setting' => "setting"
     ],
 	
 	'cmsmodulepages' => [
@@ -12,7 +12,8 @@ return [
 						 'datetips'=>['category'=>'Date Tips Category','datetips'=>'Date Tips '],
 						 'profile' => ['profile' => 'Profile'],
 						 'users' => ['users' => 'Users'],
-						  'menu' => ['menu' => 'Menu']
+						  'menu' => ['menu' => 'Menu'],
+						  'setting' => ['setting' => 'Setting']
 						 ],
 	
 	'cmstitle' => 'Datehub Admin',

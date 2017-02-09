@@ -39,6 +39,13 @@ class AuthController extends Controller
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
+    // public function __construct(Guard $auth, Registrar $registrar)
+    // {
+    //     $this->auth = $auth;
+    //     $this->registrar = $registrar;
+
+    //     $this->middleware('guest', ['except' => 'getLogout']);
+    // }
 
     /**
      * Get a validator for an incoming registration request.
@@ -68,5 +75,16 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        // return Admin::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'password' => bcrypt($data['password']),
+        // ]);
     }
+
+    // protected function guard()
+    // {
+    // return Auth::guard('admin');
+    // }
 }

@@ -41,11 +41,10 @@ return [
             'provider' => 'users',
         ],
         //define own guard
-        // 'admin' => [
-        //     'driver' => 'session',
-        //     'provider' => 'admins',
-        // ],
-
+        'admin' => [
+        'driver' => 'session',
+        'provider' => 'admin_login',
+    ],
 
         'api' => [
             'driver' => 'token',
@@ -76,10 +75,10 @@ return [
             'model' => App\User::class,
         ],
 
-    //     'admins' => [
-    //     'driver' => 'eloquent.admin',
-    //     'model' => App\Admin::class,
-    // ],
+    'admin_login' => [
+        'driver' => 'eloquent',
+        'model' => App\Admin::class,
+    ],
 
         'users' => [
             'driver' => 'database',
@@ -113,6 +112,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+    //     'admins' => [
+    //     'provider' => 'admin_login',
+    //     'email' => 'auth.emails.password',
+    //     'table' => 'password_resets',
+    //     'expire' => 60,
+    // ],
     ],
 
 ];
