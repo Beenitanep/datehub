@@ -19,10 +19,12 @@ class settingController extends Controller
 	}
 
     public function index(){
-    	return view('backend/modules/setting/setting-page');
+    	$data = $this->setting->first();
+    	return view('backend/modules/setting/setting-page', compact('data'));
     }
 
     public function settingPage(){
+        //$data['setting'] = Input::all();
     	$data['site_title'] = Input::get('site-title');
     	$data['tagline'] =   Input::get('tagline');
     	$data['site_address'] = Input::get('site-address');
@@ -43,5 +45,5 @@ class settingController extends Controller
     	return Redirect::to(PREFIX . 'setting');
     }
 
-    
+
 }
