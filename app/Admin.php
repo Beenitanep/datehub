@@ -18,5 +18,11 @@ class Admin extends Authenticatable
     	return Admin::where('user_name',$username)->where('password',$hashpswd)->first();
     }
 
+    public function getById($id){
+    	return Admin::where('id',$id)->first();
+    }
+
+    
+
 
 }

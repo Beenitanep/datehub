@@ -54,4 +54,6 @@ class User extends Authenticatable
     {
          return User::where('name', 'LIKE', '%'.$search.'%')->get();
     }
+
+    
 }

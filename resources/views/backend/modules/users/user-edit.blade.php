@@ -21,14 +21,14 @@
     <label for="exampleInputEmail">Email</label>
     <input type="email" class="form-control" name="email" id="email" value="{{ $editData->email}}">
   </div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="exampleInputPassword">Password</label>
     <input type="password" class="form-control" name="password" id="password" placeholder="password">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword">Confirm Password</label>
     <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder="confirm password">
-  </div>
+  </div> -->
 
     
   <!-- <div class="form-group">

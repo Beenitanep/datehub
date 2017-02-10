@@ -11,7 +11,6 @@ use Redirect;
 use Validator;
 use Auth;
 use Hash;
-
 class adminpasswordchangeController extends Controller
 {
    // public function __construct(){
@@ -40,26 +39,27 @@ class adminpasswordchangeController extends Controller
 }
 public function postCredentials(Request $request)
 {
-	//dd($request);
-  if(Auth::Check())
+  
+//dd(Auth::guard('admin')->check());
+  if(Auth::guard('admin')->check())
+  //if(Auth::Check())
   {
     $request_data = $request->All();
-    //dd($request_data);
     $validator = $this->admin_credential_rules($request_data);
     if($validator->fails())
     {
       return response()->json(array('error' => $validator->getMessageBag()->toArray()), 400);
     }
     else
-    {  
-      $current_password = Auth::User()->password;   
+    {   
+      $current_password = Auth::guard('admin')->user()->password;
       if(Hash::check($request_data['current-password'], $current_password))        
       {           
-        $user_id = Auth::User()->id;                       
-        $obj_user = User::find($user_id);
-        $obj_user->password =  bcrypt($request_data['password']);
-        $obj_user->save(); 
-        return "ok";
+        $user_id = Auth::guard('admin')->user()->id;  
+        $obj_user =  Auth::guard('admin')->user();
+        $obj_user->password = bcrypt($request_data['password']);
+        $obj_user->update();
+        return Redirect::to(PREFIX);
       }
       else
       {           

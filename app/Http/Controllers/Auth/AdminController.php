@@ -40,7 +40,7 @@ class AdminController extends Controller
        //dd($loggedInAdmin);
         if($loggedInAdmin){
             Session::put('loggedIn','true');
-            Session::put('loggedInUser', Auth::guard('admin')->user()) ;
+            Session::put('loggedInUser', Auth::guard('admin')->user()) ; //user() is function of auth
             return Redirect::to(PREFIX.'home');
         }
 

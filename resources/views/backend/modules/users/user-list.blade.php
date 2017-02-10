@@ -25,7 +25,7 @@
                         <th class="hidden-xs">S.N.</th>
                         <th>User Name</th>
                         <th>Email</th>
-                       <!--  <th>Change Password</th> -->
+                        <th>Change Password</th>
                         <!-- <th>Status</th> -->
                     </tr> 
                   </thead>
@@ -43,7 +43,7 @@
                             <td class="hidden-xs"><?php echo $counter;?></td>
                             <td>{{ $data->name }}</td>
                              <td>{{ $data->email }}</td>
-                             <!-- <td><a  href="{{URL::to(PREFIX.'users/passwordChange')}}?id= {{ $data->id }}" onClick="Javascript: return confirm('Are you sure you want to changepassword?')">Change Password</a></td> -->
+                             <td><a  href="{{URL::to(PREFIX.'users/passwordChange')}}?id= {{ $data->id }}" onClick="Javascript: return confirm('Are you sure you want to changepassword?')">Change Password</a></td>
                             <!-- <td>@if($data->status == 'Publish')
                             <a href="{{ URL::to(PREFIX. 'slider/unPublish')}}?id= {{ $data->id}}" class="btn btn-success btn-flat">Publish</a>
                             @else

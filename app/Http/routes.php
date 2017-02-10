@@ -18,11 +18,6 @@ Route::get(PREFIX, 'Auth\AdminController@getLogin');
 Route::post(PREFIX.'login', 'Auth\AdminController@postLogin');
 Route::get(PREFIX.'logout', 'Auth\AdminController@logout');
 
-// Registration Routes...
-    Route::get('admin/register', 'AdminAuth\AuthController@showRegistrationForm');
-    Route::post('admin/register', 'AdminAuth\AuthController@register');
-
-    Route::get('/admin', 'AdminController@index');
 
 Route::get(PREFIX.'adminpasswordchange', 'cms\modules\adminpasswordchangeController@index');
 Route::post(PREFIX.'postCredentials', 'cms\\modules\\adminpasswordchangeController@postCredentials');
